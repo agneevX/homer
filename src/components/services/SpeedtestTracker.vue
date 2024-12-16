@@ -4,8 +4,8 @@
       <p class="title is-4">{{ item.name }}</p>
       <p class="subtitle is-6">
         <template v-if="speedtest">
-          <i class="fas fa-arrow-down"></i> {{ download }} Mbit/s |
-          <i class="fas fa-arrow-up"></i> {{ upload }} Mbit/s |
+          <i class="fas fa-arrow-down"></i> {{ download }} Mb/s |
+          <i class="fas fa-arrow-up"></i> {{ upload }} Mb/s |
           <i class="fas fa-stopwatch"></i> {{ ping }} ms
         </template>
       </p>
@@ -52,7 +52,7 @@ export default {
         .catch((e) => console.log(e));
     },
     format: function (value) {
-      return value ? parseFloat(value).toFixed(2) : "n/a";
+      return value ? parseFloat(value).toFixed(1) : "n/a";
     },
   },
 };
